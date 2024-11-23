@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
             data.forEach(donation => {
                 const donationItem = document.createElement('div');
                 donationItem.classList.add('donation-item');
-                donationItem.id = donation.id; // Use the donation ID
+                donationItem.id = donation.id; 
                 
                 donationItem.innerHTML = `
                     <h3>${donation.name}</h3>
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     </a>
                 `;
                 
-                // Append to the donation list
                 donationList.appendChild(donationItem);
             });
         })
