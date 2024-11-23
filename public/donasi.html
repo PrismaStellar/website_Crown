@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pilih Jenis Donasi - RedDonno">
+    <title>RedDonno - Pilih Donasi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="draggable">Home</a>
+            <a href="donasi.html" class="draggable" id="donasi">Donasi</a>
+        </nav>
+    </header>
+
+    <section class="donation-options">
+        <h1>Pilih Jenis Donasi</h1>
+        <div class="donation-list">
+            <div class="donation-item">
+                <h3>Bantu Pendidikan</h3>
+                <p>Mendukung anak-anak kurang mampu untuk bersekolah.</p>
+                <a href="#pendidikan-section">
+                    <button>Donasi Sekarang</button>
+                </a>
+            </div>
+            <div class="donation-item">
+                <h3>Bencana Alam</h3>
+                <p>Berikan bantuan untuk korban bencana alam di seluruh dunia.</p>
+                <a href="#bencana-section">
+                    <button>Donasi Sekarang</button>
+                </a>
+            </div>
+            <div class="donation-item">
+                <h3>Kesehatan</h3>
+                <p>Dukung perawatan kesehatan bagi mereka yang membutuhkan.</p>
+                <a href="#kesehatan-section">
+                    <button>Donasi Sekarang</button>
+                </a>
+            </div>
+            <div class="donation-item">
+                <h3>Kemiskinan</h3>
+                <p>Berikan Bantuan Dana Bagi Penderita Kemiskinan.</p>
+                <a href="#kemiskinan-section">
+                    <button>Donasi Sekarang</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="pendidikan-section" class="donation-section">
+        <h2>Bantu Pendidikan</h2>
+        <p>Deskripsi lebih lanjut mengenai program pendidikan.</p>
+        <div id="pendidikan-donations" class="donation-grid">
+        </div>
+    </section>
+
+    <section id="bencana-section" class="donation-section">
+        <h2>Bencana Alam</h2>
+        <p>Deskripsi lebih lanjut mengenai bantuan bencana alam.</p>
+        <div id="bencana-donations" class="donation-grid">
+        </div>
+    </section>
+
+    <section id="kesehatan-section" class="donation-section">
+        <h2>Kesehatan</h2>
+        <p>Deskripsi lebih lanjut mengenai program kesehatan.</p>
+        <div id="kesehatan-donations" class="donation-grid">
+        </div>
+    </section>
+
+    <section id="kemiskinan-section" class="donation-section">
+        <h2>Kemiskinan</h2>
+        <p>Deskripsi lebih lanjut mengenai bantuan kemiskinan.</p>
+        <div id="kemiskinan-donations" class="donation-grid">
+        </div>
+    </section>
+
+    <script>
+        window.onload = function () {
+            fetch('http://localhost:3000/api/donations')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(donation => {
+                        const donationCard = `
+                            <div class="donation-card">
+                                <img src="background/image.png" alt="${donation.program_name} Image">
+                                <h4>${donation.program_name}</h4>
+                                <h3>${donation.program_name}</h3>
+                                <p>${donation.description}</p>
+                                <p>Total Donasi: Rp ${donation.total_donations}</p>
+                                <p>Target Donasi: Rp ${donation.target_donations}</p>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: ${((donation.total_donations / donation.target_donations) * 100)}%;" data-target="${donation.target_donations}" data-current="${donation.total_donations}"></div>
+                                </div>
+                                <a href="#${donation.id}">
+                                    <button>Donasi Sekarang</button>
+                                </a>
+                            </div>
+                        `;
+
+                        if (donation.program_name === 'Bantu Pendidikan') {
+                            document.getElementById('pendidikan-donations').innerHTML += donationCard;
+                        } else if (donation.program_name === 'Bencana Alam') {
+                            document.getElementById('bencana-donations').innerHTML += donationCard;
+                        } else if (donation.program_name === 'Kesehatan') {
+                            document.getElementById('kesehatan-donations').innerHTML += donationCard;
+                        } else if (donation.program_name === 'Kemiskinan') {
+                            document.getElementById('kemiskinan-donations').innerHTML += donationCard;
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching donation data:', error);
+                });
+        };
+    </script>
+
+    <footer>
+        <p>&copy; 2024 RedDonno. All rights reserved.</p>
+    </footer>
+</body>
+</html>
