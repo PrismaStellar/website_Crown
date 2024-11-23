@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         <button>Donasi Sekarang</button>
                     </a>
                 `;
-                
                 donationList.appendChild(donationItem);
             });
         })
