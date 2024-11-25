@@ -1,3 +1,40 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.media-slide');
+    const slideCount = slides.length;
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        if (index >= slideCount) {
+            currentIndex = 0; 
+        } else if (index < 0) {
+            currentIndex = slideCount - 1; 
+        } else {
+            currentIndex = index;
+        }
+
+        const slideWidth = slides[0].clientWidth; 
+        document.querySelector('.media-slides').style.transform = `translateX(-${currentIndex * slideWidth}px)`; // Menggeser slider
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex++;
+        showSlide(currentIndex);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex--;
+        showSlide(currentIndex);
+    });
+
+    showSlide(currentIndex); 
+
+    window.addEventListener('resize', () => {
+        showSlide(currentIndex);
+    });
+});
+
+
+
 const draggables = document.querySelectorAll('.draggable-box');
 let activeElement = null;
 

@@ -3,94 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RedDonno Donation Platform">
-    <title>RedDonno - Donasi untuk Kebaikan</title>
+    <meta name="description" content="Platform Donasi Futuristik">
+    <title>Bersama Kita Bisa</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html" class="draggable" id="home">Home</a>
-            <a href="donasi.html" class="draggable" id="donasi">Donasi</a>
+        <nav class="custom-header">
+            <div class="logo">
+                <img src="background/103208766_p0.jpg" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#media">MEDIA</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#tentang">TENTANG</a></li>
+                <li><a href="donasi.html">DONASI</a></li>
+            </ul>
+            <div class="login">
+                <a href="#login">LOG IN</a>
+            </div>
         </nav>
     </header>
     
-    <section class="hero">
+    
+    <section id="home" class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="background/PC-2560x1440-April-en-withoutcalendar.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Selamat Datang di Bersama Kita Bisa</h1>
-            <p>Kami menyediakan lapangan bagi Anda yang ingin BY1 Donasi</p>
-            <a href="donasi.html">
-                <button id="donateButton">Donasi Sekarang</button>
-            </a>
+            <p>Bersama kita wujudkan perubahan melalui donasi.</p>
+            <a href="donasi.html" class="donate-button">Donasi Sekarang</a>
         </div>
-
-        <div class="draggable-box" id="tentangBox">
-            <h3>Tentang Kami</h3>
-            <p>Bersama Kita Bisa adalah platform donasi terkemuka yang bertujuan untuk menghubungkan para donatur 
-                dengan berbagai organisasi amal dan individu yang membutuhkan. Didirikan pada tahun 2024, 
-                Bersama Kita Bisa dimulai dari mimpi basah sekelompok teman yang ingin membantu dunia dengan cara 
-                yang mudah dan aman. Hingga kini, Bersama Kita Bisa telah memfasilitasi ribuan donasi ke seluruh penjuru dunia.</p>
+    </section>
+    
+    <section id="media" class="media-section">
+        <h2 class="section-title">MEDIA</h2>
+        <div class="media-slider">
+            <div class="media-slides">
+                <div class="media-slide">
+                    <img src="background/103208766_p0.jpg" alt="Image 1">
+                </div>
+                <div class="media-slide">
+                    <img src="background/image.png" alt="Image 2">
+                </div>
+                <div class="media-slide">
+                    <img src="background/image.png" alt="Image 3">
+                </div>
+            </div>
+            <button class="prev">Prev</button>
+            <button class="next">Next</button>
         </div>
-
-        <div class="draggable-box" id="komunitasBox">
-            <h3>Komunitas</h3>
-            <p>Bergabunglah dengan komunitas Bersama Kita Bisa untuk Kita Bisa Saling BlackMail Sesama.</p>
-            <div class="logos">
-                <a href="https://x.com/reddonno" target="_blank">
-                    <img src="/logos/twitter.png" alt="X">
-                </a>
-                <a href="https://facebook.com/reddonno" target="_blank">
-                    <img src="/logos/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://pixiv.net/reddonno" target="_blank">
-                    <img src="/logos/pixiv.png" alt="Pixiv">
-                </a>
-                <a href="/explore.html" target="_blank">
-                    <img src="/logos/explore.png" alt="Explore">
-                </a>
+    </section>          
+    
+    <section id="news" class="news-section">
+        <h2>News</h2>
+        <p>Berita terbaru dan update mengenai kegiatan donasi.</p>
+        <div class="news-list">
+            <div class="news-item">
+                <h3>Program Bantuan Pendidikan</h3>
+                <p>16 November 2024</p>
+                <p>Kami telah mendistribusikan lebih dari 500 paket bantuan pendidikan ke anak-anak di wilayah terpencil.</p>
+            </div>
+            <div class="news-item">
+                <h3>Kegiatan Buka Puasa Bersama</h3>
+                <p>10 November 2024</p>
+                <p>Lebih dari 1.000 orang bergabung dalam acara buka puasa bersama untuk meningkatkan solidaritas.</p>
+            </div>
+            <div class="news-item">
+                <h3>Donasi untuk Korban Banjir</h3>
+                <p>1 November 2024</p>
+                <p>Donasi sebesar Rp 1.5 Miliar telah diberikan untuk membantu korban banjir di wilayah Jabodetabek.</p>
             </div>
         </div>
+    </section>    
+    
+    <section id="tentang" class="about-section">
+        <h2>Tentang Kami</h2>
+        <p>Bersama Kita Bisa adalah platform yang menghubungkan para donatur dengan organisasi dan individu yang membutuhkan. Kami percaya bahwa donasi bukan hanya tentang memberikan materi, tetapi juga tentang memberikan harapan dan peluang untuk masa depan yang lebih baik.</p>
+        <div class="team">
+            <div class="team-member">
+                <img src="property/Anton.jpg" alt="Founder">
+                <h3>Antonio Christian Allo</h3>
+                <p>Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="property/Fajar.jpg" alt="Co-Founder">
+                <h3>Fajar Akbarudin Rosnah Wangge</h3>
+                <p>Co-Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Manager">
+                <h3>Valdis</h3>
+                <p>Operational Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Manager">
+                <h3>Nuel</h3>
+                <p>Operational Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Manager">
+                <h3>Duta</h3>
+                <p>Operational Manager</p>
+            </div>
+        </div>
+    </section>    
 
-        <div class="draggable-box" id="kontakBox">
-            <h3>Kontak</h3>
-            <ul>
-                <li>Email: <a href="mailto:support@reddonno.com">support@reddonno.com</a></li>
-                <li>WhatsApp: <a href="https://wa.me/6281234567890">+62 812-3456-7890</a></li>
-                <li>Facebook: <a href="https://facebook.com/reddonno" target="_blank">facebook.com/reddonno</a></li>
-                <li>X (Twitter): <a href="https://x.com/reddonno" target="_blank">x.com/reddonno</a></li>
-                <li>Instagram: <a href="https://instagram.com/reddonno" target="_blank">@reddonno</a></li>
-            </ul>
+    <section id="features" class="features">
+        <h2>Fitur Kami</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>Transparansi</h3>
+                <p>Kami memastikan donasi Anda digunakan sesuai tujuan.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Keamanan</h3>
+                <p>Data dan donasi Anda dilindungi oleh teknologi terkini.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Kemudahan</h3>
+                <p>Berbagai metode pembayaran tersedia untuk kenyamanan Anda.</p>
+            </div>
         </div>
     </section>
 
-    <section class="features">
-        <h2>Fitur Donasi Kami</h2>
-        <div class="feature-item">
-            <h3>Top Up Dana Cepat</h3>
-            <p>Berikan kebebasan bagi Anda yang ingin donasi menggunakan berbagai metode pembayaran.</p>
-        </div>
-        <div class="feature-item">
-            <h3>Pengiriman Donasi 1x24 Jam</h3>
-            <p>Donasi yang diterima akan diproses secepat mungkin dalam waktu 24 jam.</p>
-        </div>
-        <div class="feature-item">
-            <h3>Keamanan Terjamin</h3>
-            <p>Kami menjaga transparansi dan keamanan setiap transaksi yang dilakukan.</p>
-        </div>
-        <div class="feature-item">
-            <h3>CS dijamin gacor 777</h3>
-            <p>Disini kami jamin selalu gacor, natal berkah 777</p>
-        </div>
-        <div class="feature-item">
-            <h3>Donasi Dijamin Sampai(maybe)</h3>
-            <p>Kami Usahakan Donasi agar dapat sampai, kalau tidak berarti sudah kami pakai untuk membeli mobil labogihin</p>
-        </div>
+    <section id="contact" class="contact">
+        <h2>Hubungi Kami</h2>
+        <p>Email: <a href="mailto:support@reddonno.com">support@reddonno.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/6281234567890">+62 812-3456-7890</a></p>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Bersama Kita Bisa. Semua Hak Cipta Dilindungi.</p>
+    <footer class="footer">
+        <p>&copy; 2024 Bersama Kita Bisa. Hak cipta dilindungi.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
