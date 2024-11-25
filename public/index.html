@@ -22,9 +22,13 @@
                 <li><a href="#tentang">TENTANG</a></li>
                 <li><a href="donasi.html">DONASI</a></li>
             </ul>
-            <div class="login">
-                <a href="#login">LOG IN</a>
+            <div class="login" id="login-container">
+                <a href="#login" id="login-button">LOG IN</a>
             </div>
+            <div class="account" id="account-container" style="display: none;">
+                <a href="account.html" id="account-button">Account</a>
+            </div>
+            
         </nav>
     </header>
     
@@ -39,6 +43,31 @@
             <h1>Selamat Datang di Bersama Kita Bisa</h1>
             <p>Bersama kita wujudkan perubahan melalui donasi.</p>
             <a href="donasi.html" class="donate-button">Donasi Sekarang</a>
+        </div>
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeLogin">&times;</span>
+                <h2>Log In</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Email" required />
+                    <input type="password" id="login-password" placeholder="Password" required />
+                    <button type="submit">Log In</button>
+                </form>
+                <p>Belum punya akun? <a href="#" id="openRegister">Daftar di sini</a></p>
+            </div>
+        </div>
+        
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeRegister">&times;</span>
+                <h2>Register</h2>
+                <form id="register-form">
+                    <input type="text" id="register-name" placeholder="Nama" required />
+                    <input type="email" id="register-email" placeholder="Email" required />
+                    <input type="password" id="register-password" placeholder="Password" required />
+                    <button type="submit">Register</button>
+                </form>
+            </div>
         </div>
     </section>
     
@@ -62,8 +91,8 @@
     </section>          
     
     <section id="news" class="news-section">
-        <h2>News</h2>
-        <p>Berita terbaru dan update mengenai kegiatan donasi.</p>
+        <h2 class="section-news">NEWS</h2>
+        <div class="news-lister">
         <div class="news-list">
             <div class="news-item">
                 <h3>Program Bantuan Pendidikan</h3>
@@ -80,6 +109,7 @@
                 <p>1 November 2024</p>
                 <p>Donasi sebesar Rp 1.5 Miliar telah diberikan untuk membantu korban banjir di wilayah Jabodetabek.</p>
             </div>
+        </div>
         </div>
     </section>    
     

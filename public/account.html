@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+</head>
+<body>
+    <header>
+        <nav class="custom-header">
+            <div class="logo">
+                <img src="background/103208766_p0.jpg" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#media">MEDIA</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#tentang">TENTANG</a></li>
+                <li><a href="donasi.html">DONASI</a></li>
+            </ul>
+            <div class="login">
+                <a href="#login">LOG IN</a>
+            </div>
+        </nav>
+    </header>
+
+    <h2>Your Account</h2>
+    <p id="account-name"></p>
+    <p id="account-email"></p>
+
+    <script>
+        fetch('/account')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('account-name').textContent = `Name: ${data.name}`;
+            document.getElementById('account-email').textContent = `Email: ${data.email}`;
+        })
+        .catch(error => {
+            alert('You need to log in first');
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>

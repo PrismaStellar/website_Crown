@@ -66,6 +66,7 @@ draggables.forEach(draggable => {
     });
 
     draggable.style.cursor = 'grab';
+
 });
 document.addEventListener('DOMContentLoaded', function () {
     fetch('http://localhost:3000/api/donations')
@@ -92,3 +93,47 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error fetching donation data:', error);
         });
 });
+
+const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+    const openLoginButton = document.querySelector('.login a'); 
+    const closeLoginButton = document.getElementById('closeLogin');
+    const closeRegisterButton = document.getElementById('closeRegister');
+    const openRegisterButton = document.getElementById('openRegister');
+
+    window.onload = function() {
+        loginModal.style.display = 'none';
+        registerModal.style.display = 'none';
+    }
+
+    openLoginButton.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        loginModal.style.display = 'flex'; 
+    });
+
+    closeLoginButton.addEventListener('click', function() {
+        loginModal.style.display = 'none'; 
+    });
+
+
+    closeRegisterButton.addEventListener('click', function() {
+        registerModal.style.display = 'none'; 
+    });
+
+    openRegisterButton.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        loginModal.style.display = 'none';
+        registerModal.style.display = 'flex';
+    });
+
+    window.addEventListener('click', function(e) {
+        if (e.target === loginModal || e.target === registerModal) {
+            loginModal.style.display = 'none';
+            registerModal.style.display = 'none';
+        }
+    });
+  
+
+        
+    
+    
