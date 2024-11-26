@@ -9,6 +9,11 @@ body {
     background-color: #4ebbd8;
     color: #fdfdfd;
 }
+.footer {
+    margin-top: 0; 
+    padding-top: 0;
+    background-color: black; 
+}
 
 .custom-header {
     display: flex;
@@ -93,8 +98,6 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-
-/* Close Button */
 .close {
     position: absolute;
     top: 10px;
@@ -106,31 +109,29 @@ body {
 }
 
 .close:hover {
-    color: #ff0000; /* Change to red when hover */
+    color: #ff0000; 
 }
 
-/* Form Fields */
 .modal-content input {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 6px;
-    background-color: #e6e6e6; /* Light grey input fields */
+    background-color: #e6e6e6; 
     font-size: 16px;
     transition: all 0.3s ease;
 }
 
 .modal-content input:focus {
-    border-color: #4CAF50; /* Green border on focus */
-    background-color: #fff; /* White background on focus */
+    border-color: #4CAF50; 
+    background-color: #fff; 
 }
 
-/* Submit Button */
 .modal-content button {
     width: 100%;
     padding: 12px;
-    background-color: #4CAF50; /* Green button */
+    background-color: #4CAF50; 
     color: white;
     border: none;
     border-radius: 6px;
@@ -140,10 +141,9 @@ body {
 }
 
 .modal-content button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049; 
 }
 
-/* Link for Register */
 #openRegister {
     color: #4CAF50;
     text-decoration: none;
@@ -154,7 +154,6 @@ body {
     text-decoration: underline;
 }
 
-/* Header and Navigation Styles */
 nav {
     background-color: #333; /* Dark background */
     color: white;
@@ -173,7 +172,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #4CAF50; /* Green color on hover */
+    color: #4CAF50;
 }
 
 .hero {
